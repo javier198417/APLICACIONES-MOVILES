@@ -33,7 +33,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   Future<bool> registerUser() async {
     try {
       final response = await http.post(
-        Uri.parse('http://192.168.0.133:5000/register'),
+        Uri.parse('http://192.168.0.103:5000/register'),
         headers: {
           'Content-Type': 'application/json',
         },

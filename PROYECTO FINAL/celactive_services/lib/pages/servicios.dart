@@ -23,7 +23,7 @@ class _ServiciosPageState
   Future<void> obtenerServicios() async {
     try {
       final url = Uri.parse(
-        'http://192.168.0.133:5000/servicios',
+        'http://192.168.0.103:5000/servicios',
       );
 
       final respuesta = await http.get(url);
@@ -90,6 +90,33 @@ class _ServiciosPageState
           ),
         ],
       ),
+
+      // BOTONES NATIVOS DEL TALLER
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            heroTag: "camara",
+            backgroundColor: Colors.teal,
+            child: const Icon(Icons.camera_alt),
+            onPressed: () {
+              context.push('/camara');
+            },
+          ),
+
+          const SizedBox(height: 12),
+
+          FloatingActionButton(
+            heroTag: "gps",
+            backgroundColor: Colors.orange,
+            child: const Icon(Icons.location_on),
+            onPressed: () {
+              context.push('/ubicacion');
+            },
+          ),
+        ],
+      ),
+
       body: cargando
           ? const Center(
               child: CircularProgressIndicator(),

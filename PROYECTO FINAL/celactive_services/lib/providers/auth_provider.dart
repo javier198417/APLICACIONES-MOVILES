@@ -11,10 +11,9 @@ class AuthNotifier extends StateNotifier<Cliente?> {
       const FlutterSecureStorage();
 
   final AuthService _authService = AuthService(
-    baseUrl: 'http://192.168.0.133:5000',
+    baseUrl: 'http://192.168.0.103:5000',
   );
 
-  /// LOGIN
   Future<bool> login(
     String correo,
     String contrasena,
@@ -69,7 +68,6 @@ class AuthNotifier extends StateNotifier<Cliente?> {
     }
   }
 
-  /// REGISTRO
   Future<bool> register(
     String nombre,
     String correo,
@@ -91,7 +89,6 @@ class AuthNotifier extends StateNotifier<Cliente?> {
     }
   }
 
-  /// CARGAR SESIÓN GUARDADA
   Future<void> loadSession() async {
     try {
       final token = await _storage.read(key: 'token');
@@ -122,7 +119,6 @@ class AuthNotifier extends StateNotifier<Cliente?> {
     }
   }
 
-  /// LOGOUT
   Future<void> logout() async {
     state = null;
     await _storage.deleteAll();

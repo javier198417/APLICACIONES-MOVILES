@@ -9,7 +9,7 @@ class OrdenesPage extends ConsumerWidget {
 
   Future<List<dynamic>> fetchOrdenes(String token) async {
     final response = await http.get(
-      Uri.parse('http://192.168.0.133:5000/ordenes'),
+      Uri.parse('http://192.168.0.103:5000/ordenes'),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',

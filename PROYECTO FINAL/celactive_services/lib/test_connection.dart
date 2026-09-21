@@ -13,7 +13,7 @@ class _TestConnectionState extends State<TestConnection> {
   String result = 'Presiona el botón para probar conexión';
 
   Future<void> testBackend() async {
-    final url = Uri.parse('http://192.168.0.120:5000/servicios'); // IP local de tu PC
+    final url = Uri.parse('http://192.168.0.103:5000/servicios'); // IP local de tu PC
     final headers = {
       'Authorization': 'Basic ${base64Encode(utf8.encode('admin:celactive123'))}',
     };

@@ -35,11 +35,11 @@ class _HistorialPageState
   Future<void> obtenerHistorial(int idCliente) async {
     try {
       final url = Uri.parse(
-        'http://192.168.0.133:5000/historial/$idCliente',
+        'http://192.168.0.103:5000/historial/$idCliente',
       );
 
       print(
-        'URL HISTORIAL: http://192.168.0.133:5000/historial/$idCliente',
+        'URL HISTORIAL: http://192.168.0.103:5000/historial/$idCliente',
       );
 
       final respuesta = await http.get(url);
